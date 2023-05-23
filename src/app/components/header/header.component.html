@@ -1,0 +1,14 @@
+<div class="header">
+    <mat-toolbar color="primary">
+        <span>NG Chat</span>
+        <span class="header__spacer"></span>
+
+        <button mat-raised-button (click)="loginWithGoogle()" *ngIf="!(isLoggedIn$ | async); else LoggedIn">
+            Login
+        </button>
+        
+        <ng-template #LoggedIn>
+            <button mat-raised-button (click)="signOut()">Logout</button>
+        </ng-template>
+    </mat-toolbar>
+</div>
